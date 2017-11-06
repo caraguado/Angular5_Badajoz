@@ -1,0 +1,56 @@
+<template id='pony-tlp'>
+    <style>
+        h1 { color: orange;}
+    </style>
+    <h1>
+        Curso de angular 5
+    </h1>
+
+
+
+<script> 
+
+ let PonyComponentProto = Object.create(HTMLElement.prototype);
+
+
+//CUSTOM ELEMENT
+
+
+PonyComponentProto.createdCallback = function(){
+
+        /*var template = document.querySelector('#pony-tpl');
+        var clone = document.importNode(template.content,true);
+        var shadow = this.createShadowRoot();
+        this.createShadowRoot.appendChild(clone);*/
+
+        let oImport = document.querySelector('link= [rel="import"]').import;
+        const template = document.querySelector('template');
+        var clone = document.importNode(template.content,true);
+        var shadow = this.createShadowRoot();
+        this.createShadowRoot.appendChild(clone);
+    };
+
+
+    // new element
+    //var PonyComponent = document.registerElement('ns-pony');
+    var PonyComponent = document.registerElement('ns-pony', {prototype: PonyComponentProto});
+
+    // insert en current body
+    document.body.appendChild(new PonyComponent());
+
+//SHADOW
+    // add some template in the Sahdow DOM
+    /*PonyComponent.createdCallback = function(){
+
+        var shadow = this.createShadowRoot();
+        shadow.innerHtml ='<h1>Curso angular </h1>';
+    };*/
+
+// TEMPLATE
+
+
+</script>
+
+<ns-pony>
+
+</ns-pony>
