@@ -1,3 +1,11 @@
-<p>
-  padre works!
-</p>
+<div>
+  <h2>Componente padre</h2>
+
+  <input type="text" placeholder="Escribe un nombre " [(ngModel)]="sNombre">
+
+  <app-hijo [miNombre]="sNombre" (eventOutPutRecibido)="responderRecibido()" ></app-hijo>
+
+  <p>
+    El hijo se llama {{sNombre}}
+  </p>
+</div>

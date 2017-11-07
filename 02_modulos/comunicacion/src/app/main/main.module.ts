@@ -9,7 +9,7 @@ import { HijoComponent } from './hijo/hijo.component';
     CommonModule,
     FormsModule
   ],
-  exports: [],
+  exports: [PadreComponent, HijoComponent],
   declarations: [PadreComponent, HijoComponent]
 })
 export class MainModule { }

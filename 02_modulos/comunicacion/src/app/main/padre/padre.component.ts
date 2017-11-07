@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PadreComponent implements OnInit {
 
+
+  sNombre: string;
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  responderRecibido() {
+   this.sNombre="";
   }
 
 }
