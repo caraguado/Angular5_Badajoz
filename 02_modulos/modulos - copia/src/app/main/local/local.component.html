@@ -1,0 +1,24 @@
+<article class="row">
+    
+      <h2> Referencias Locales</h2>
+      
+      <div class="col-6">
+    
+        <label> Que pasaaaaaaaaaaaa</label>
+        <!--<input type="text" [value]="sNombreInput">-->
+        <input type="text" #nombre>
+
+        <button (click) ="nombre.value=''">Borrar </button>
+        
+      </div>
+    
+      <div class="col-6">
+          
+        <p>
+         hola {{nombre.value}}
+        </p>
+              
+      </div>
+      
+    </article>
+    

@@ -15,6 +15,10 @@ class libroTecnico extends libro {
 
     constructor(autor,titulo,tema){
 
+this.editorial = undefined;
+
+this.editorial = undefined;
+
         super(autor,titulo);
 
         this.tema= tema;

@@ -1,0 +1,34 @@
+<article class="row">
+
+  <h2> Expresiones</h2>
+
+  <div class="col-6">
+
+    <label> Que pasaaaaaaaaaaaa</label>
+    <!--<input type="text" [value]="sNombreInput">-->
+    <input type="text" [(ngModel)]= "sNombreInput">
+
+    <input type="checkbox" [(ngModel)]= "isSpanish">
+
+    <button (click)="sNombreInput=''">Borrar </button>
+    <button (click)="btnBorrar()">BorrarFunction </button>
+
+  </div>
+
+  <div class="col-6">
+      
+    <p>
+      holaaaaaa peter {{sNombreInput}}
+
+      holaaaaaa peter {{sNombreInput.replace("lmu","diosa")}}
+
+      holaaaaaa peter {{sNombreInput.toLocaleUpperCase()}}
+
+      El producto *1 es :{{sNumber*1}}
+
+       {{isSpanish?"ARRIBA ESPANIA":"CATALONIAAAA"}}
+    </p>
+          
+  </div>
+  
+</article>
