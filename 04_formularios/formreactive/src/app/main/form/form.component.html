@@ -1,0 +1,30 @@
+<form [formGroup]="formLibros" (ngSubmit)="enviarFormLibros()">
+           
+        <label for="titulo">Titulo</label>
+    <input type="text" id="titulo" formControlName="titulo">
+
+    <label for="autor">Autor</label>
+    <input type="text" id="autor" formControlName="autor">
+
+    <label for="editorial">Editorial</label>
+    <input type="text" id="editorial" formControlName="editorial">
+
+    <label for="fecha">Fecha (Año)</label>
+    <input type="text" id="fecha" formControlName="fecha">
+
+            <label></label>
+            <button type="submit" [disabled]="!formLibros.valid">Enviar</button>
+ </form>
+        
+ 
+<p> HOLA {{ formLibros.controls['titulo'].hasError('required')}} </p>
+ 
+<p> HOLA {{ formLibros.controls['titulo'].error}} </p>
+
+<p>
+    
+    {{ formLibros.value | json}}
+</p>
+<p>
+    {{ formLibros.valid }}
+</p>

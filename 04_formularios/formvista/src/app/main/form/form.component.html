@@ -1,0 +1,74 @@
+<article>
+    <form novalidate #formulario="ngForm" (ngSubmit)= " enviar()">
+        <!--Text-->    
+        <h2>Usuario</h2>
+        <p>
+            <input type="text" name="name"
+            placeholder="Indica tu nombre" required  minlength='4' [(ngModel)]="user.nombre">
+
+            <input type="text" name="name"
+            placeholder="Indica tu apelloido"  required  minlength='4'[(ngModel)]="user.apellido">
+
+            <input type="text" name="name"
+            placeholder="Indica tu telefono"  required ng-pattern="/^\d{9}$/" [(ngModel)]="user.telefono">
+        </p>
+
+
+        hidden
+
+        <!--Radio-Buttos-->
+        <h2>Selecciona una Impresora</h2>
+        <div *ngFor="let impresora of aImpresoras">
+            <input type="radio" 
+                name ="printer" [(ngModel)]="impresoraSeleccionada" [value]="impresora">
+            <label>{{impresora.modelo}}</label>
+        </div>
+
+        <!--Checkbox-->    
+        <h2>Seleción de opciones</h2>
+        <p>
+            <input id="print" name="print" type="checkbox" [(ngModel)]="print" 
+                [disabled]="!impresoraSeleccionada"
+                (change)="avisarPrint()">
+            <label for="print">Imprimir resultado</label><br>
+            
+            <input id="tono" name="tono" type="checkbox" [(ngModel)]="isClaro"
+                [disabled]="!impresoraSeleccionada" > 
+            <label for="tono">Tono claro</label>			
+        </p>
+        
+        <!--Select/options --> 
+        <p>
+            <label for="select">departamento </label>
+            <select id="select" name="select"
+            [(ngModel)]="departamentoSeleccionado"> 
+                <option *ngFor="let provincia of aDepartamentos"
+                    [ngValue]="provincia">
+                    {{provincia.nombre}}
+                </option>
+            </select>
+        </p>	
+        <button [disabled]="!formulario.valid" type="submit">Enviar</button>
+
+        <button  type="button" (click)="borrar()">Borrar</button>
+
+    </form>
+
+    <div *ngIf="mostrarFinal">
+        <h2>Resultado</h2>
+        <ul>
+            <li>Usuario: {{user | json}}</li>
+            <li>Impresora seleccionada: {{impresoraSeleccionada.modelo}}</li>
+            <li>Opción print seleccionada: {{print}}</li>
+            <li>Opción claro seleccionada: {{isClaro}}</li>
+            <li>Provincia elegida: {{departamentoSeleccionado}}</li>
+        </ul>    
+    </div>
+
+    <h2>lista de validacion</h2>
+    <ul>
+        <li> {{formulario.valid}}</li>
+        <li> {{formulario.untouched}}</li>
+        <li> {{formulario.pristine}}</li>
+    </ul>
+</article>

@@ -1,0 +1,32 @@
+<div class="row">
+    
+      <div class="col-12">
+    
+          <input type="text" placeholder="Escribe una idea" [(ngModel)]="sIdea4">
+          <button (click)="addIdea4()">Añadir</button>
+          <p>
+              Ideass: {{aIdeas | json }}
+          </p>
+      </div>
+    
+      <div class="col-12" *ngIf="aIdeas4.length; then conIdeas else sinIdeas"> </div>
+
+          <ng-template #conIdeas>
+              <h2>
+                  Lista de ideas
+                </h2>
+                <ul>
+                  <li *ngFor="let idea of aIdeas; let i= index">
+                    {{idea}} ({{i+1}})
+                  </li>
+                </ul>
+          </ng-template>
+
+          <ng-template #sinIdeas>
+              <h3>SIN IDEAS</h3>
+          </ng-template> 
+            
+       
+      
+    </div>
+    

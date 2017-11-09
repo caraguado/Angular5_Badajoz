@@ -1,0 +1,93 @@
+* visual studio code
+* servidor : administrador de internet information services (IIS)   --> a partir de windows 7
+	* panel de control
+		* seleccionar programas y caracteristicas
+			* activa/ desactivar caracteristicas de windows
+				* internet information services
+
+* instalacion
+		extensiones de visual studio code
+
+instalacion de git y en cmd git --version
+
+	git config --global -l
+	git config --global username 'caraguado'
+
+registro en github
+
+
+union repositorio nube gitbug con git local
+		git clone https://github.com/caraguado/Angular5_Badajoz.git
+
+node -v
+npm -v
+
+angular-cli
+https://cli.angular.io/
+https://www.npmjs.com/
+
+	npm node-modules donde se instala angular cli
+	ng -v
+
+	npm install -g @angular/cli
+	ng new XXXX
+	cd XXXX
+	ng serve
+
+	npm install -s bootstrap@4.0.0-beta.2	
+		-s actualiza pacgkage.json
+
+	ng build
+		--> carpeta dist
+
+	
+	
+	ng build -t production
+
+_______________
+
+https://cli.angular.io/
+http://localhost:8090/
+https://www.npmjs.com/search?q=&page=0&ranking=optimal
+http://localhost:4200/
+https://angular.io/guide/styleguide
+http://www.typescriptlang.org/
+
+____________
+
+
+
+Enlaces simbolicos
+http://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html#contact
+http://schinagl.priv.at/nt/hardlinkshellext/HardLinkShellExt_win32.exe
+http://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html
+
+02_modulos
+	ng new modulos -si   (skip install)
+	mklink /D node_modules ..\..\node_modules
+	ng serve
+
+Generador de elementos de codigo
+		
+	ng generate --version    [ng g]
+	ng g m shared 	 [ng generate modules shared]
+
+	--falta enganchar este modulo a nuestra estructura de modulos
+	en el app.module.ts se importa el SharedModule 
+		import { SharedModule } from './shared/shared.module';
+		imports: [
+    BrowserModule,
+    SharedModule
+  ],
+
+	ng g c cabeza   [ ng generate components cabeza]
+
+	app.component.html
+		<app-cabecera>
+</app-cabecera>
+
+	ng g c shared/pie
+
+	
+	
+
